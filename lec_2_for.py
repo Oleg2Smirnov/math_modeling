@@ -11,4 +11,4 @@ for i in 1, 3, 4:
 
 a = [1, 5, 7, 10]
 for i in a:
-    print(f' {i}**3 = (i**3)')
+    print(f' {i}**3 = {i**3}')
