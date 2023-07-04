@@ -9,3 +9,10 @@ while a * b ** (c - 1) > a * (b * e) and d > e:
     print(a * (b ** e))
     e += 1
 print(a * b ** (c - 1))
+
+
+
+
+for i in range(c-1):
+    a = a*b
+    print(a)
