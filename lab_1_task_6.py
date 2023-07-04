@@ -1,0 +1,12 @@
+a = []
+b = input('Введите свой возраст: ')
+c = input('Введите свой пол: ')
+d = input('Введите своё имя: ')
+e = input('Введите свой город: ')
+f = input('Введите свой класс: ')
+a.append(b)
+a.append(c)
+a.append(d)
+a.append(e)
+a.append(f)
+print(a)
