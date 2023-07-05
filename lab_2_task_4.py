@@ -18,12 +18,12 @@
 a = int(input('Введите число элементов: '))
 b = [1, 1]
 
-for i in range(0, a - 2, 1):
-    c = b[i] + b[ i + 1]
-    b.append(c)
 if a == 0:
     print('[]')
 elif a == 1:
     print('[1]')
 else:
-    print(b)
+    for i in range(0, a, 1):
+        c = b[i] + b[ i + 1]
+        b.append(c)
+        print(b[i], end=', ' )
