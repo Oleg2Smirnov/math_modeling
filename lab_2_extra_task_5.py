@@ -1,8 +1,8 @@
 a = int(input())
 b = 2
 c = 2
-d = [1]
-e = 1
+d = []
+e = 2
 
 while b <= a:
     if b / c == b // c and b != c:
