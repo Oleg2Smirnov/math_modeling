@@ -1,0 +1,10 @@
+earth_gravity_constant = 10 
+earth_mass = 5.97237 * 10 ** 24
+sigma_steff_bolc = 5.67036713 * 10 ** (-8)
+gravity_constant = 6.67408 * 10 ** (-11) 
+sun_mass = 2 * 10 ** 30
+light_speed = 3 * 10 ** 8 
+plank_constant_1 = 6.626 * 10 ** (-34) 
+plank_constant_2 = 1.0546 * 10 ** (-34) 
+eyler_number = 1.6 * 10 ** (-19) 
+bolc_constant = 1.38 * 10 ** (-23) 
