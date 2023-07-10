@@ -6,5 +6,5 @@ sun_mass = 2 * 10 ** 30
 light_speed = 3 * 10 ** 8 
 plank_constant_1 = 6.626 * 10 ** (-34) 
 plank_constant_2 = 1.0546 * 10 ** (-34) 
-eyler_number = 1.6 * 10 ** (-19) 
+eyler_number = 2.72 
 bolc_constant = 1.38 * 10 ** (-23) 
