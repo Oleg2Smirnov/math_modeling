@@ -1,4 +1,5 @@
 import numpy as np
+
 from lab_3_task_1 import earth_gravity_constant as g
 x0 = float(input('Начальная координата x: '))
 y0 = float(input('Начальная координата y: '))
