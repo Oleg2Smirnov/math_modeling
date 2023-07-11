@@ -3,6 +3,7 @@ slice = a[2:5:1]
 print(slice)
 
 import numpy as np
+
 a = [1, 5, 3, 6]
 slice = a[0:2:1]
 print(slice)
