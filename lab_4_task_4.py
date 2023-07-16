@@ -10,5 +10,6 @@ def func(a, b, c):
             d = float(input(f'Введите значение x{i+1} (a < x < b): '))
         x = d ** 2
         print(f'y = {x}')
-        
+    return ''
+    
 print(func(a, b, N))
