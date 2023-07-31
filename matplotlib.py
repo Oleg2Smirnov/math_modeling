@@ -15,3 +15,5 @@ def parabola_plotter(a=1, b=1, c=0, title='Parabola plotter'):
     plt.title(title)
     plt.legend()
     plt.show()
+	
+parabola_plotter()
