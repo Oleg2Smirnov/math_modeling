@@ -14,7 +14,7 @@ ax.set_ylim(-1, 1) # Пределы изменения переменной У
 def update(frame): # Функция подстановки координат в объект анимации
     xdata.append(frame) # Рассщет координаты Х
     ydata.append(np.sin(frame)) # Рассщет координаты У
-	  anim_object.set_data(xdata, ydata) # Передача координат
+    anim_object.set_data(xdata, ydata) # Передача координат
     return anim_object,
  
 ani = FuncAnimation(fig, # Стандартный вызов пространства для анимации
