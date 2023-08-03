@@ -1,4 +1,4 @@
-	import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import numpy as np
  
 x = [3, 4, 5]
