@@ -18,11 +18,10 @@ def ellips_plotter(a=1, b=1, title = 'ellips_plotter'):
   
     fxy = X**2 / a**2 + Y**2 / b**2
 
-    plt.plot(x, y, label='my ellips')
     plt.xlabel('coord - x')
     plt.ylabel('coord - y')
     plt.title(title)
-    plt.legend()
+    plt.legend('my ellips')
     plt.contour(X, Y, fxy, levels=[1])
     plt.savefig('lab_6_task_3.png')
 
