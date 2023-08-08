@@ -26,4 +26,4 @@ ax.set_zlabel('Z')
 # Подпись графика
 ax.set_title('3D Test')
  
-plt.show()
+plt.savefig('3d.png')
