@@ -3,16 +3,16 @@ import numpy as np
 
 M = 2*10**30                            # масса Солнца
 G = 6.67*10**(-11)                      # грав конст
-T1 = 3*365.26*86400                     # период обращения тела
+T1 = 1*365.26*86400                     # период обращения тела
 A1 = (G*M*T1**2/4/np.pi**2)**(1/3)      # большая полуось тела
-e = 0                                   # эксцентриситет тела
-alpha = 0*np.pi/180                     # угол между начальными положениями тела и Земли (тело в перицентре)
+e = 0.5                                  # эксцентриситет тела
+alpha = 180*np.pi/180                     # угол между начальными положениями тела и Земли (тело в перицентре)
 A2 = 1.496*10**11                       # большая полуось Земли
 T2 = 365.26*86400                       # период обращения Земли
 
 fig, ax = plt.subplots()
-ax.set_xlim(-40, 40)
-ax.set_ylim(-1, 1)
+#ax.set_xlim(-10, 10)
+#ax.set_ylim(-0.2, 0.6)
 
 def ellips_plotter(A1, T1, M, e, alpha, A2, T2):
     p1 = A1*(1-e**2)                                        # фокальный параметр тела
@@ -30,14 +30,14 @@ def ellips_plotter(A1, T1, M, e, alpha, A2, T2):
     psi = np.arcsin(np.sin(theta)*r1/L)                     # фазовый угол
     eps = np.arccos(Vr1/V1)                                 # угол между лучевой и полной тела
     i = np.pi/2 + psi - eps                                 # угол между полной и трансверсальной для Земли
-    gamma = np.arcsin(np.sin(theta)*A2/L)                    # элонгационный угол
-    Ut = V1*np.cos(i) - V2*np.cos(theta+psi)                # трансверсальная относительно Земли
+    gamma = np.arcsin(np.sin(theta)*A2/L)                   # элонгационный угол
+    Ut = V1*np.cos(i) - V2*np.cos(gamma)                # трансверсальная относительно Земли
     Ur = (V1*np.sin(i) - V2*np.sin(gamma))/1000             # лучевая относительно Земли
     w = Ut/r1 * 180/np.pi * 86400                           # угловая относительно Земли
 
     plt.plot(Ur, w, label='grafic')
-    plt.xlabel('coord - Ur')
-    plt.ylabel('coord - w')
+    plt.xlabel('Ur, км/с')
+    plt.ylabel('w, градус/день')
     plt.legend()
     plt.savefig('ellips.png')
 	
