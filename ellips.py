@@ -26,9 +26,9 @@ def ellips_plotter(A1, T1, M, e, alpha, A2, T2):
     psi = np.arccos((r1**2+L**2-A2**2)/(2*r1*L))            # фазовый угол
     eps = np.arccos(Vr1/V1)                                 # угол между лучевой и полной тела
     i = np.pi/2 + psi - eps                                 # угол между полной и трансверсальной для Земли
-    gamma = np.arccos((L**2+A2**2-r1**2)/(2*A2*L))          # элонгационный угол
-    Ut = V1*np.cos(i) + V2*np.cos(gamma)                    # трансверсальная относительно Земли
-    Ur = V1*np.sin(i) - V2*np.sin(gamma)                    # лучевая относительно Земли
+    #gamma = np.arccos((L**2 + A2**2 - r1**2)/(2*A2*L))      # элонгационный угол
+    Ut = V1*np.cos(i) - V2*np.cos(psi+theta)                # трансверсальная относительно Земли
+    Ur = V1*np.sin(i) - V2*np.sin(psi+theta)                    # лучевая относительно Земли
     w = Ut/r1                                               # угловая относительно Земли
 
     plt.plot(Ur, w, label='grafic')
