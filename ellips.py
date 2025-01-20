@@ -10,9 +10,13 @@ alpha = 0*np.pi/180                     # угол между начальным
 A2 = 1.496*10**11                       # большая полуось Земли
 T2 = 365.26*86400                       # период обращения Земли
 
+fig, ax = plt.subplots()
+ax.set_xlim(-40, 40)
+ax.set_ylim(-1, 1)
+
 def ellips_plotter(A1, T1, M, e, alpha, A2, T2):
     p1 = A1*(1-e**2)                                        # фокальный параметр тела
-    E = np.linspace(0, 6*np.pi, 100000)                     # эксцентрическая аномалия тела
+    E = np.linspace(0, 2*np.pi, 100000)                     # эксцентрическая аномалия тела
     t = (E-e*np.sin(E))*T1/(2*np.pi)                        # время с перицентра 
     phi_1 = 2*np.arctan(np.tan(E/2)*((1+e)/(1-e))**0.5)     # истинная аномалия тела 
     phi_2 = 2*np.pi*(t/T2)                                  # истинная аномалия Земли
@@ -26,11 +30,10 @@ def ellips_plotter(A1, T1, M, e, alpha, A2, T2):
     psi = np.arccos((r1**2+L**2-A2**2)/(2*r1*L))            # фазовый угол
     eps = np.arccos(Vr1/V1)                                 # угол между лучевой и полной тела
     i = np.pi/2 + psi - eps                                 # угол между полной и трансверсальной для Земли
-    #gamma = np.arccos((L**2 + A2**2 - r1**2)/(2*A2*L))      # элонгационный угол
+    #gamma = np.arccos((L**2 + A2**2 - r1**2)/(2*A2*L))     # элонгационный угол
     Ut = V1*np.cos(i) - V2*np.cos(psi+theta)                # трансверсальная относительно Земли
-    Ur = V1*np.sin(i) - V2*np.sin(psi+theta)                    # лучевая относительно Земли
-    w = Ut/r1                                               # угловая относительно Земли
-
+    Ur = (V1*np.sin(i) - V2*np.sin(psi+theta))/1000         # лучевая относительно Земли
+    w = Ut/r1 * 180/np.pi * 86400                           # угловая относительно Земли
     plt.plot(Ur, w, label='grafic')
     plt.xlabel('coord - Ur')
     plt.ylabel('coord - w')
