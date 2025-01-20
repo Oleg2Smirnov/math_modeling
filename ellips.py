@@ -27,13 +27,14 @@ def ellips_plotter(A1, T1, M, e, alpha, A2, T2):
     V2 = (G*M/A2)**0.5                                      # скорость Земли
     theta = alpha + phi_1 - phi_2                           # разница экл долгот 
     L = (r1**2 + A2**2 - 2*r1*A2*np.cos(theta))**0.5        # расстояние между телом и Землёй
-    psi = np.arccos((r1**2+L**2-A2**2)/(2*r1*L))            # фазовый угол
+    psi = np.arcsin(np.sin(theta)*r1/L)                     # фазовый угол
     eps = np.arccos(Vr1/V1)                                 # угол между лучевой и полной тела
     i = np.pi/2 + psi - eps                                 # угол между полной и трансверсальной для Земли
-    #gamma = np.arccos((L**2 + A2**2 - r1**2)/(2*A2*L))     # элонгационный угол
-    Ut = V1*np.cos(i) - V2*np.cos(psi+theta)                # трансверсальная относительно Земли
-    Ur = (V1*np.sin(i) - V2*np.sin(psi+theta))/1000         # лучевая относительно Земли
+    gamma = np.arcsin(np.sin(theta)*A2/L)                    # элонгационный угол
+    Ut = V1*np.cos(i) - V2*np.cos(theta+psi)                # трансверсальная относительно Земли
+    Ur = (V1*np.sin(i) - V2*np.sin(gamma))/1000             # лучевая относительно Земли
     w = Ut/r1 * 180/np.pi * 86400                           # угловая относительно Земли
+
     plt.plot(Ur, w, label='grafic')
     plt.xlabel('coord - Ur')
     plt.ylabel('coord - w')
